@@ -1,0 +1,360 @@
+main{
+  #hero{
+    position: relative;
+    background: url("../images/background-Slider.jpg") no-repeat center top;
+    background-attachment: fixed;
+    background-size: cover;
+    width:100%;
+    height:900px;
+    .hero-bg {
+      @extend .img-fluid;
+      width: 100%;
+      z-index: 1;
+    }
+    .hero-caption{
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      top:40%;
+      left:0;
+      right:0;
+      text-align: center;
+      color:$white;
+      z-index: 10;
+      h1{
+        @include media-breakpoint-up(xs) {
+          font-size: 30px;
+        }
+        @include media-breakpoint-up(sm) {
+          font-size: 60px;
+        }
+        @include media-breakpoint-up(md) {
+          font-size: 120px;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 190px;
+        }
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+      h2{
+        @include media-breakpoint-up(xs) {
+          font-size:10px;
+        }
+        @include media-breakpoint-up(sm) {
+          font-size: 20px;
+        }
+        @include media-breakpoint-up(md) {
+          font-size: 30px;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 40px;
+        }
+        font-weight: 300;
+      }
+    }
+  }
+  .before-discover{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+  }
+  #discover{
+    margin: 1rem auto;
+    @extend .container;
+    .discover-title{
+      padding-top:2rem;
+      text-align: center;
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .discover-subtitle{
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .discover-block{
+      margin-top: 2rem;
+      @extend .col-sm-12, .col-md-3, .col-lg-3, .col-xl-3;
+      text-align: center;
+      h3{
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        color:#25A09D;
+      }
+      p{
+        font-weight: lighter;
+        font-size: 1rem;
+      }
+      .picto{
+        padding:3rem 0;
+      }
+      .picto-plus{
+        padding: 1.8rem 0;
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+  #solutions {
+    position: relative;
+    @extend .container-fluid;
+    padding:0;
+    .solutions-parallax {
+      position: relative;
+      background: url("../images/background-solutions.jpg") no-repeat bottom center;
+      background-attachment: fixed;
+      background-size: auto;
+      padding: 12rem;
+      .solutions-caption {
+        @extend .col-sm-12, .col-md-12, .col-lg-12, .col-xl-12;
+        margin-top:1rem;
+        h3{
+          font-family: 'Montserrat', sans-serif;
+          font-size: 2.5rem;
+          text-align: center;
+          text-transform: uppercase;
+          text-align: center;
+          color: #fff;
+        }
+        p{
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.2rem;
+          text-align: center;
+          color: $white;
+          color: #fff;
+        }
+      }
+      img{
+        width:100%;
+        position: absolute;
+        top:0;
+        bottom:5%;
+        left:0;
+        right:0;
+      }
+    }
+    .solutions-before{
+      position: absolute;
+      top:0;
+      margin-top: -2px;
+
+    }
+  }
+}
+#portfolio{
+  @extend .container;
+  padding: 6rem 0 ;
+}
+.left-col{
+  @extend .col-sm-12, .col-md-6, .col-lg-6, .col-xl-6;
+}
+.right-col{
+  @extend .col-sm-12, .col-md-6, .col-lg-6, .col-xl-6;
+  position: relative;
+}
+.block-court, .block-immo,.block-invest{
+position: relative;
+}
+.block-court{
+  margin-top:1.6rem;
+}
+.img-bg{
+  -webkit-box-shadow: 0px 0px 131px -21px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 131px -21px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 131px -21px rgba(0,0,0,0.75);
+}
+.immo-text,.court-text, .invest-text{
+  position:absolute;
+  top:5%;
+  left:5%;
+}
+.immo-logo, .invest-logo, .court-logo{
+  position: absolute;
+  z-index: 6;
+  bottom:0;
+  left:30%;
+  z-index: 15;
+
+}
+#actualite{
+  background-color: #3C3C3E;
+  @extend .container-fluid;
+  padding-bottom: 5rem;
+}
+.actualite-title{
+  text-align: center;
+  padding:3rem 0 0.5rem 0;
+  color: #fff;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-bottom:0;
+}
+.actualite-subtitle{
+  text-align: center;
+  margin-top:0;
+  color: #fff;
+  margin-bottom: 4rem;
+  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+.article{
+  @extend .container;
+}
+.article-thumbnail{
+  position: relative;
+  @extend .col-sm-12, .col-md-8;
+  .post-r-bef{
+    @extend .img-fluid;
+    position: absolute;
+    right:0;
+    margin-right: -2px ;
+    bottom: 0;
+    height:100%;
+  }
+  .post-l-bef{
+    @extend .img-fluid;
+    position: absolute;
+    left:0;
+    margin-left: -2px ;
+    bottom: 0;
+    height:100%;
+  }
+  .post-img{
+    @extend .img-fluid;
+  }
+  padding:0;
+}
+.article-content{
+  position: relative;
+  @extend .col-sm-12, .col-md-4;
+  background-color: #fff;
+  padding:1rem 0;
+  h4{
+    color: #25A09D;
+    text-align: center;
+    margin-top:5rem;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+  p{
+    font-family: 'Montserrat', sans-serif;
+    padding: 2rem;
+    color: #969696;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+#partenaires   {
+  position: relative;
+  @extend .container-fluid;
+  padding:0;
+  .partenaires-parallax {
+    position: relative;
+    background: url("../images/background-nos-partenaires.jpg") no-repeat bottom center;
+    background-attachment: fixed;
+    background-size: auto;
+    padding: 12rem;
+    .partenaires-caption {
+      @extend .col-sm-12, .col-md-12, .col-lg-12, .col-xl-12;
+      margin-top:1rem;
+      h3{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+      }
+      p{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2rem;
+        text-align: center;
+        color: $white;
+        color: #fff;
+      }
+    }
+    .picto-part{
+      width:100%;
+      position: absolute;
+      top:0;
+      bottom:5%;
+      left:0;
+      right:0;
+    }
+    .partenaires-after{
+      position: absolute;
+      bottom:0;
+      margin: auto -345px;
+    }
+  }
+}
+#maps-container{
+position: relative;
+  background-image: url("../images/maps.jpg");
+  background-size: auto;
+  h3{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+  p{
+    text-align: center;
+    color: white;
+  }
+
+
+}
+.formulaire{
+  @extend .col-5;
+  padding:2rem;
+  .form-group{
+    margin-bottom: 0;
+  }
+  margin: auto;
+  padding-top:6rem;
+  .col-md-6{
+    padding:0;
+  }
+  .left{
+    padding-right: 0.5rem;
+  }
+  .right{
+    padding-left:0.5rem;
+  }
+  .text-field{
+    @extend .col-md-12;
+    padding: 0;
+    textarea{
+      margin-top: 0;
+    }
+  }
+  input, textarea{
+    margin: 0.5rem auto;
+    &::placeholder{
+      font-size: 12px;
+      font-style: italic;
+      color: #202020;
+    }
+  }
+  .btn-submit{
+    padding-bottom: 3rem;
+  }
+
+}
+
+

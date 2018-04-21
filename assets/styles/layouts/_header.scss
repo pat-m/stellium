@@ -1,0 +1,81 @@
+header{
+  #header-banner{
+    background-color: $white;
+    left:0;
+    right:0;
+    position: fixed;
+    top:0;
+    z-index: 20;
+    #main-navigation{
+      position: relative;
+      @extend .col-sm-12, .col-md-5, .col-lg-5, .col-xl-5;
+    }
+    #main-nav{
+      position: absolute;
+      top:10%;
+      left:3%;
+      z-index: 0;
+      @extend .navbar, .navbar-toggler;
+      span{
+        margin-top:5px;
+        display: block;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14.5px;
+        cursor: hand;
+        color: $brand-primary;
+        text-transform: uppercase;
+      }
+      button{
+        @extend .navbar-toggler;
+      }
+      ul{
+        @extend .navbar-nav, .mr-auto;
+        background-color: $brand-primary;
+      }
+      li{
+        @extend .nav-item;
+        padding:0.3rem;
+      }
+      a{
+        @extend .nav-link;
+        color: $white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+    .logo{
+      @extend .col-sm-12, .col-md-2, .col-lg-2, .col-xl-2;
+      img{
+        display: block;
+        margin: auto;
+      }
+      @include media-breakpoint-down(md){
+        img{
+          width:100px;
+        }
+      }
+    }
+    .user-login{
+      @include media-breakpoint-down(md){
+        display: none;
+      }
+      @extend .col-sm-12, .col-md-5, .col-lg-5, .col-xl-5;
+      margin:auto;
+      .login{
+        display:block;
+        @extend .col-4;
+        margin: auto;
+      }
+    }
+  }
+  .before-hero{
+    margin-top: -2px;
+    position: absolute;
+    width:100%;
+    left: 0%;
+    right: 0%;
+    z-index: -1;
+  }
+}

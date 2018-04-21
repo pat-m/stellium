@@ -1,0 +1,14 @@
+@import "common/variables";
+
+// Node Modules: scss
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// endnode
+
+@import "common/global";
+@import "components/buttons";
+@import "components/forms";
+@import "layouts/header";
+@import "layouts/home";
+@import "layouts/footer";
+
+

@@ -1,0 +1,15 @@
+footer{
+  padding: 3rem 0;
+  .page-footer{
+    padding: 10rem 0;
+    background-color: $gray-dark;
+  }
+  .footer-block{
+    @extend .col-md-4;
+    text-align: center;
+  }
+  #copyright{
+    text-align: center;
+    color: black;
+  }
+}
