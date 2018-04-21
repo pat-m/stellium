@@ -1,5 +1,7 @@
 <?php require 'includes/head.php'; ?>
 <?php require 'includes/header.php'; ?>
+<?php require_once 'db.php'; ?>
+<?php require_once 'treatment.php'; ?>
 
 <main>
 	<section id="hero"">
@@ -168,33 +170,57 @@
 			<div class="formulaire">
 				<h3>Contactez-nous</h3>
 				<p>Aliquam ac sollicitudin tellus</p>
-				<form  action="index.html" method="post">
+
+				<form  action="index.php" method="post">
 					<div class="form-group row">
 						<div class="left col-md-6">
-							<input type="text"  class="form-control" name="" value="" placeholder="Nom">
-							<input type="text" class="form-control" name="" value="" placeholder="Prenom">
-							<input type="email" class="form-control" name="" value="" placeholder="Email">
+							<input type="text" class="form-control" name="name" value="" placeholder="Nom">
+							<input type="text" class="form-control" name="surname" value="" placeholder="Prenom">
+							<input type=email class="form-control" name="email" value="" placeholder="Email">
 						</div>
 						<div class="right col-md-6">
-							<input type="text" class="form-control" name="" value="" placeholder="Téléphone">
-							<input type="text" class="form-control" name="" value="" placeholder="Adresse">
-							<input type="email" class="form-control" name="" value="" placeholder="Sujet">
+							<input type="text" class="form-control" name="tel" value="" placeholder="Téléphone">
+							<input type="text" class="form-control" name="address" value="" placeholder="Adresse">
+							<input type="text" class="form-control" name="subject" value="" placeholder="Sujet">
 						</div>
 					</div>
 						<div class="form-group row">
 							<div class="text-field">
-								<textarea class="form-control" name="name" rows="8" cols="80" placeholder="Message"></textarea>
+								<textarea class="form-control" name="message" rows="8" cols="80" placeholder="Message"></textarea>
 							</div>
 						</div>
 					<div class="form-group btn-submit">
-						<input type="submit" class="submit-button" name="" value="ENVOYER">
-					</div>
+						<input type="submit" class="submit-button" value="ENVOYER">
+                        <?php
+                        try {
+                            $requete = 'INSERT INTO contact (contact.Nom,contact.Prenom,contact.Sujet,contact.Message,contact.Tel,contact.Mail,contact.Adresse) VALUES (:nom,:prenom,:sujet,:message,:tel,:mail,:adresse)';
+                            $res = $bdd->prepare($requete);
+                            $res->bindParam(':nom', $_POST['name']);
+                            $res->bindParam(':prenom', $_POST['surname']);
+                            $res->bindParam(':sujet', $_POST['subject']);
+                            $res->bindParam(':message', $_POST['message']);
+                            $res->bindParam(':tel', $_POST['tel']);
+                            $res->bindParam(':mail', $_POST['email']);
+                            $res->bindParam(':adresse', $_POST['address']);
+                            $res->execute(array(
+                                ':nom' => $_POST['name'],
+                                ':prenom' => $_POST['surname'],
+                                ':sujet' => $_POST['subject'],
+                                ':message' => $_POST['message'],
+                                ':mail' => $_POST['email'],
+                                ':adresse' => $_POST['address'],
+                                ':tel' => $_POST['tel']));
+
+
+                        } catch(PDOException $e)
+                        {
+                            echo $e->getMessage();
+                        }
+                    ?>
 				</form>
 			</div>
 	</section>
 </main>
-
-
 
 
 <?php require 'includes/footer.php'; ?>
